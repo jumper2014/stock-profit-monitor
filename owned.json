@@ -1,15 +1,15 @@
 [
   {
     "code":"sz002432",
-    "name":"JiuAnYiLiao",
+    "name":"九安医疗",
     "number": 300,
     "cost": 11.616
   },
   {
-    "code":"sz002432",
-    "name":"JiuAnYiLiao",
-    "number": 300,
-    "cost": 11.616
+    "code":"sh600846",
+    "name":"同济科技",
+    "number": 200,
+    "cost": 9.21
   }
 
 ]

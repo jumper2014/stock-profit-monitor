@@ -1,8 +1,12 @@
 # coding=utf-8
 # 股票类
 
+# import sys
+# reload(sys)
+# # sys.setdefaultencoding('gb2312')
 
-class Share(object):
+
+class Stock(object):
     def __init__(self, code, name, number, cost):
         """
         初始化
@@ -17,8 +21,9 @@ class Share(object):
         self.cost = cost
         self.today = 0    # 今日盈亏
         self.total = 0    # 总盈亏
+        self.percent = 0.0  # 盈亏百分比
 
-    def calc_profit(self, yesterday, current):
+    def show_profit(self, yesterday, current):
         """
         通过开盘价和当前价计算今日盈亏和总盈亏
         :param yesterday: 昨日收盘价
@@ -27,6 +32,11 @@ class Share(object):
         """
         self.today = (current - yesterday) * self.number
         self.total = (current - self.cost) * self.number
-        print(self.code, self.name, self.total)
-
-
+        self.percent = ((current - self.cost)/self.cost) * 100
+        # print("code:{code}, name:{name}, profit:{profit}".format(
+        #     code=self.code, name=self.name, profit=self.total
+        # ))
+        # print(self.code, self.name, self.total)
+        print "---------------------------------------------"
+        print self.name, " | ", self.code, " | ", self.total, " | ", self.percent
+        # print(self.code)
