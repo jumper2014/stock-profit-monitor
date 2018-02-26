@@ -1,5 +1,6 @@
+#!/usr/bin/env python
 # coding=utf-8
-# author: ijumper
+# author: zengyuetian
 # 支持运行时修改json配置文件
 
 import time
@@ -9,8 +10,8 @@ import threading
 from stock import Stock
 
 
-retrieve_interval = 60  # 抓取间隔
-config_json = "owned.json"  # 股票信息配置文件
+retrieve_interval = 60          # 抓取间隔
+config_json = "owned.json"      # 股票信息配置文件
 
 
 def read_json():
@@ -39,7 +40,7 @@ if __name__ == '__main__':
         stocks = list()
         for config in configs:
             stock = Stock(code=config["code"], name=config["name"],
-                          number=config["number"], cost=config["cost"])
+                          share=config["share"], cost=config["cost"])
             stocks.append(stock)
 
         # 启动多线程，抓取股票实时价格
